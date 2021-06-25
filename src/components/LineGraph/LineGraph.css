@@ -1,0 +1,12 @@
+.appright_linegraph-title {
+  margin-top: 1rem;
+  color: #6a5d5d;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.linegraph-dark {
+  /* background-color: #a7a3a3; */
+  background-color: #8f8888;
+  color: #fff;
+}

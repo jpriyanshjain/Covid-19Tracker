@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+}
+
+.light {
+  background-color: #f5f6fa;
+}
+.dark {
+  background-color: #212121;
+}
+.app__body {
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+}
+
+.app__infoBoxs {
+  margin-top: 300px;
+}
+
+.app__stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app__left {
+  flex: 0.9;
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+.app__information > h3 {
+  color: #6a5d5d;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.app__information > h3:last-of-type {
+  margin-top: 1rem;
+}
+
+@media (min-width: 990px) {
+  .app__body {
+    flex-direction: row;
+    padding-top: 64px;
+  }
+}
