@@ -31,7 +31,6 @@ function SearchBar({countries , isDark }) {
         const country =  displayCountries[index];
         setInputCountry(country.name);
         setCountry(country.name);
-        console.log(country);
         setShowCountries(false);
         setDisplayCountries(displayCountries);
 
