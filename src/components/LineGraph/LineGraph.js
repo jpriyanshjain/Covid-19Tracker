@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Line } from "react-chartjs-2";
 import numeral from "numeral";
+import { Line } from "react-chartjs-2";
 import './LineGraph.css';
 const options = {
   legend: {
-    display: false,
+    display: true,
+    
   },
   elements: {
     point: {
@@ -38,7 +39,6 @@ const options = {
           display: false,
         },
         ticks: {
-          // Include a dollar sign in the ticks
           color: "#fff",
           callback: function (value, index, values) {
             return numeral(value).format("0a");
@@ -90,8 +90,10 @@ function LineGraph({isDark ,  casesType="cases" }) {
           data={{
             datasets: [
               {
-                backgroundColor: isDark? "#fff" : "rgba(204, 16, 52, 0.5)",
-                borderColor: "#fff",
+                label : "cases",
+                backgroundColor: isDark? "#333333" : "rgba(204, 16, 52, 0.5)",
+                borderColor: isDark? "#fff" : "rgb(204, 16, 52)",
+                Color: "#fff",
                 data: data,
                 fill: true,
               },

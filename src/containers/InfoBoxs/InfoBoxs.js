@@ -20,9 +20,7 @@ function InfoBoxs() {
       fetch(url)
         .then((response) => response.json())
         .then((data) => {
-          // setInputCountry(countryCode);
           setCountryInfo(data);
-          console.log(data);
           if(country !== "worldwide")
           setCenter([data.countryInfo.lat, data.countryInfo.long]);
         });

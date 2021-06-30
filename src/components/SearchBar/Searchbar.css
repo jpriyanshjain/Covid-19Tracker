@@ -1,0 +1,83 @@
+.searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0;
+  background-color: #fff;
+  width: 100%;
+}
+
+.searchbar__input {
+  margin-left: 5px;
+  border: none;
+  text-decoration: none;
+  font-size: medium;
+}
+.searchbar__input--dark {
+  background-color: #333333;
+  color: #fff;
+}
+
+.searchbar__input:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+.searchbar__dropdownIcon {
+  cursor: pointer;
+  margin-left: -50px;
+}
+.searchbar__showCountries {
+  position: absolute;
+  background-color: #fff;
+  height: 400px;
+  width: 200px;
+  overflow: hidden;
+  overflow-y: scroll;
+  transform: translateX(12px) translateY(-3px);
+}
+.searchbar__showCountries--dark {
+  background-color: #333333;
+  color: #fff;
+}
+
+.searchbar__showCountries--country {
+  padding: 12px 23px;
+  cursor: pointer;
+  font-size: medium;
+}
+
+.searchbar__showCountries--country--dark {
+  border-bottom: 2px solid #4a4545;
+}
+.searchbar__showCountries--country:hover {
+  background-color: #cacacaef;
+}
+@media (min-width: 990px) {
+  .searchbar__showCountries {
+    width: 500px;
+  }
+  .searchbar__searchIcon {
+    padding: 5px;
+    margin-left: 10px;
+  }
+  .searchbar__dropdownIcon {
+    padding: 5px;
+  }
+  .searchbar__input {
+    flex-grow: 1;
+  }
+}
+
+@media (min-width: 600px) {
+  .searchbar__searchIcon {
+    padding: 5px;
+    margin-left: 10px;
+  }
+  .searchbar__dropdownIcon {
+    padding: 5px;
+  }
+  .searchbar__input {
+    flex-grow: 1;
+  }
+}

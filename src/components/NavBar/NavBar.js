@@ -5,11 +5,14 @@ import {
   FormControl,
   Select
 } from "@material-ui/core";
+import SearchBar from "../../components/SearchBar/SearchBar"
 import { useAllCountries,useSelectCountry  , useTableData} from '../../contexts/CountryContext';
 import {sortData} from '../../util'
 import {useDarkTheme} from '../../contexts/DarkThemeContext'
 import WbSunnyTwoToneIcon from '@material-ui/icons/WbSunnyTwoTone';
 import Brightness4TwoToneIcon from '@material-ui/icons/Brightness4TwoTone';
+
+
 
 function NavBar() {
   const {darkTheme, setDarkTheme} = useDarkTheme();
@@ -37,19 +40,21 @@ function NavBar() {
   }, []);
   
 
-  const onCountryChange = (e) => {
-    const country = e.target.value;
-    setCountry(country);
+  const onCountryChange = (inputcountry) => {
+    setCountry(inputcountry);
+    console.log(inputcountry);
 
   }
   const changeTheme = () => {
     setDarkTheme(pervState => !pervState);
   }
-  console.log(darkTheme);
     return (
         <div className={`navbar ${darkTheme ? "navbar__dark " : "navbar__light" }`}>
-          <h1 className="navbar__title">COVID-19 Tracker</h1>         
-          <FormControl className={`navbar__dropdown ${darkTheme && "navbar__dropdown--dark"} `}>
+          <h1 className="navbar__title">COVID-19 Tracker</h1>  
+             < div className={` navbar__searchbar ${darkTheme && "navbar__searchbar--dark"}`} >
+                <SearchBar countries={countries} isDark={darkTheme}  /> 
+              </div>       
+          {/* <FormControl className={`navbar__dropdown ${darkTheme && "navbar__dropdown--dark"} `}>
             <Select
               variant="outlined"
               value={country}
@@ -60,9 +65,11 @@ function NavBar() {
                 <MenuItem key ={country.country} value={country.value}>{country.name}</MenuItem>
               ))}
             </Select>
-          </FormControl>
+          </FormControl> */}
+          
+          
           <div 
-          className={`${darkTheme ? "navbar__darktheme--button--dark " 
+          className={` navbar__darktheme--button ${darkTheme ? "navbar__darktheme--button--dark " 
                                   : "navbar__darktheme--button--light"}  "`}
           onMouseEnter={() => setHoverDarkButton(true)} 
           onMouseLeave={() => setHoverDarkButton(false)}                     
